@@ -1,10 +1,7 @@
 package Day04;
 
 
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -13,9 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.jar.JarEntry;
 
 import static io.restassured.RestAssured.* ;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -125,7 +120,7 @@ public class SpsrtanAddingUpdTest {
     @Test
     public void testAddOneDataWithJsonFileBody(){
 
-        // Create a file called singleSpartan.json right under root directory
+        // Create a file called singleSpartanSchema.json right under root directory
         // with below content
     /*
     {
@@ -133,9 +128,9 @@ public class SpsrtanAddingUpdTest {
         "gender": "Female",
         "phone": 6549873210
     }
-    add below code to point File object to this singleSpartan.json
+    add below code to point File object to this singleSpartanSchema.json
      */
-        File externalJson = new File ("singleSpartan.json");
+        File externalJson = new File ("singleSpartanSchema.json");
 
         given()
                 .log().all()
