@@ -60,7 +60,7 @@ public class SpartanTest {
          * info about request
          * base url, base path
          * header, query params, path variable, auth. and autoriz., loggin,
-         * cookie, body(payloud)
+         * cookie, body(payload)
          *
          * when
          * --this where you send the rquest

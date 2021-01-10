@@ -18,7 +18,9 @@ public class RestAssuredIntro {
     @DisplayName("My firsrt test with Rest Assured")
     @Test
     public void TestHello(){
+
         Response response = get("http://54.86.91.200:8000/api/hello");
+
         System.out.println("response code is " + response.getStatusCode());
         assertThat(response.getStatusCode(), is(200));
         //assertThat(response.getStatusCode(), is(201));

@@ -12,7 +12,6 @@ import  static org.junit.jupiter.api.MethodOrderer.*;
 //@TestMethodOrder(OrderAnnotation.class)
 //@TestMethodOrder(Random.class)
 @TestMethodOrder(MethodOrderer.DisplayName.class) //
-
 public class TestOrdereingInJU5 {
 
 

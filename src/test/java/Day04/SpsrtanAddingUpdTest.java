@@ -130,7 +130,7 @@ public class SpsrtanAddingUpdTest {
     }
     add below code to point File object to this singleSpartanSchema.json
      */
-        File externalJson = new File ("singleSpartanSchema.json");
+        File externalJson = new File ("singleSpartan.json");
 
         given()
                 .log().all()
