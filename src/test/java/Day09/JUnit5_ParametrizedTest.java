@@ -36,7 +36,7 @@ public class JUnit5_ParametrizedTest {
                 .pathParam("zipcode" , zip).
         when()
                 .get("/us/{zipcode}").
-                then()
+        then()
                 .statusCode(200) ;
 
     }

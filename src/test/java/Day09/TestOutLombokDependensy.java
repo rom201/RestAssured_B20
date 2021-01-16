@@ -58,6 +58,7 @@ public class TestOutLombokDependensy extends HR_ORDS_TestBase {
                 jp.getList("items.findAll { it.manager_id > 0 }" , Department.class ) ;
         allDeps.forEach(System.out::println);
         // what if I just wanted to get List<String> to store DepartmentName
+
         List<String> depNames = jp.getList("items.department_name") ;
         System.out.println("depNames = " + depNames);
         // -->> items.department_name (all)
@@ -82,6 +83,11 @@ public class TestOutLombokDependensy extends HR_ORDS_TestBase {
                 jp.getList("items.findAll{ it.department_id >= 70 && it.department_id <= 100  }.department_name") ;
         System.out.println("allDeps70To100 = " + allDeps70To100);
 
+        List<String> aDeps =
+                jp.getList("items.department_name.findAll{ it.startsWith('A') } ") ;
+        System.out.println("Departments wit name start with A \n\t = " + aDeps);
+
+
 // findAll-->> will return all matching result
 // find -->> will return first match for the condition
         String dep10 =  jp.getString("items.find{ it.department_id==10 }.department_name");
@@ -96,6 +102,28 @@ public class TestOutLombokDependensy extends HR_ORDS_TestBase {
         System.out.println("sumOfAllDepIDs2 = " + sumOfAllDepIDs2);
 
 
+
+        // get the lowest department_id
+        int lowestDepId = jp.getInt("items.department_id.min()") ;
+        System.out.println("lowestDepId = \n\t" + lowestDepId);
+
+        // get the highest department_id
+        int highestDepId = jp.getInt("items.department_id.max()") ;
+        System.out.println("highestDepId = \n\t" + highestDepId);
+
+        String shortestDepName = jp.getString("items.department_name.min{ it.length() }") ;
+        System.out.println("shortestDepName = \n\t" + shortestDepName);
+
+        String longestDepName = jp.getString("items.department_name.max{ it.length() }") ;
+        System.out.println("longestDepName = \n\t" + longestDepName);
+
+        String shortestDepNameID =
+                jp.getString("items.min{ it.department_name.length() }.department_id") ;
+        System.out.println("shortestDepNameID = \n\t" + shortestDepNameID);
+
+
+
+
 // print number 5 dep ID
         System.out.println("number 5 dep ID" + jp.getInt("items.department_id[4]")   );
 // print number last dep ID
@@ -103,6 +131,16 @@ public class TestOutLombokDependensy extends HR_ORDS_TestBase {
 // print from index 7 till index 10 dep ID
         System.out.println("index 7-10 dep ID " + jp.getList("items.department_id[7..10]")   );
 
+        System.out.println("collect method demo \n");
+        // get all the department name uppercase
+        List<String> upperCaseDepNames
+                = jp.getList("items.department_name.collect{ it.toUpperCase() }") ;
+        upperCaseDepNames.forEach(System.out::println);
+
+        System.out.println(" \ncollect method demo 2\n");
+        List<String> idDepNames
+                = jp.getList("items.collect{'Deps ' + it.department_id + ', ' + it.department_name }") ;
+        idDepNames.forEach(System.out::println);
 
 
 
@@ -111,24 +149,6 @@ public class TestOutLombokDependensy extends HR_ORDS_TestBase {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

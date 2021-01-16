@@ -39,12 +39,13 @@ public class SpartanWithReusableSpecForAdminRole {
         // logDetail(LogDetail.ALL) to provide how much we want to log
 
 
-        thenSpec = expect()  //.logDetail(LogDetail.ALL)    optional
+        thenSpec = expect().logDetail(LogDetail.ALL)
                 .statusCode(is(200))
                 .contentType(ContentType.JSON);
 
 
         randomSpartanPayload = SpartanUtil.getRandomSpartanPOJO_PayLoad();
+
         postReqSpec = given().spec(givenSpec)
                 .contentType(ContentType.JSON)
                 .body(randomSpartanPayload) ;
@@ -112,9 +113,9 @@ public class SpartanWithReusableSpecForAdminRole {
 
         given()
                 .spec(postReqSpec).
-                when()
+        when()
                 .post("/spartans").
-                then()
+         then()
                 .spec(postResponseSpec)
         ;
 

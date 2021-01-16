@@ -82,7 +82,7 @@ public class PatchOneSpartan {
                 .patch("/spartans/{id}").
        then()
                 .log().all()
-                .statusCode(204);
+                .statusCode(500);
 
 
 
