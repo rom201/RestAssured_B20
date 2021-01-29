@@ -34,7 +34,7 @@ public class TestOutLombokDependensy extends HR_ORDS_TestBase {
     @DisplayName("GET /departments and save List of POJO")
     @Test
     public void testDepartmentJsonArrayToListOfPojo() {
-        List<Department> allDeps = get("/departments")
+        List<Department> allDeps = get("/departments").prettyPeek()
                 .jsonPath().getList("items", Department.class);
         //allDeps.forEach(System.out::println);
 
