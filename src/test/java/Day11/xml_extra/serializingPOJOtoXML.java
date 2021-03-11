@@ -22,7 +22,7 @@ public class serializingPOJOtoXML {
         given()
                 .log().body()
                 .contentType(ContentType.XML)
-                .body(new Item(12,"Adam","Male",1231231231) ).
+                .body(new Item(13,"Adam","Male",1231231231) ).
                 when()
                 .post("https://postman-echo.com/post") ;
 

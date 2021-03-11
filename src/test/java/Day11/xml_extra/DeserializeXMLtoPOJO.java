@@ -25,7 +25,7 @@ public class DeserializeXMLtoPOJO extends SpartanAdminTestBase{
                         //.prettyPeek()
                         .xmlPath();
 
-        Item pojo1 = xp.getObject("List.item[0]", Item.class);
+        Item pojo1 = xp.getObject("List.item[1]", Item.class);
         System.out.println("pojo1 = " + pojo1);
 
         SpartanXml pojo2 = xp.getObject("List.item[0]", SpartanXml.class);

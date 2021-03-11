@@ -34,7 +34,7 @@ public class Test_XML_ElementAttribut {
 
 
         XmlPath xp = response.xmlPath();
-        System.out.println(xp.getString("root.movie"));
+        System.out.println("aa"+xp.getString("root.movie"));
         // you get nothing because you are asking for the value inside the opening and closing tag
         // we want to get title attribute of movie element
         // we use .@attribute name to access the attributes

@@ -29,6 +29,8 @@ public class ExtractPractice {
     public static void tearDown(){
         reset();
     }
+
+
     @DisplayName("Testing GET /api/spartans/search with Basic auth")
     @Test
     public void testSearchAndExtractData(){
